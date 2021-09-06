@@ -23,7 +23,7 @@ public class App {
         for (int i = 0; i < ps_array.length; i++) {
             System.out.format("Hành khách %d\n", i + 1);
             ps_array[i].printPassengerInfo();
-            System.out.format("Tổng tiền: %f\n", ps_array[i].tinhTongTien());
+            System.out.format("Tổng tiền: %,.2f\n", ps_array[i].tinhTongTien());
             System.out.println("---------------------------");
         }
         //Sắp xếp
@@ -42,7 +42,7 @@ public class App {
         for (int i = 0; i < ps_array.length; i++) {
             System.out.format("Hành khách %d\n", i + 1);
             ps_array[i].printPassengerInfo();
-            System.out.format("Tổng tiền: %f\n", ps_array[i].tinhTongTien());
+            System.out.format("Tổng tiền: %,.2f\n", ps_array[i].tinhTongTien());
             System.out.println("----------------------");
         }
     }

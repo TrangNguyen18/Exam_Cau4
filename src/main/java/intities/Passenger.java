@@ -26,7 +26,7 @@ public class Passenger {
         System.out.println("Nhập thông tin khách hàng");
         System.out.print("\tHọ tên : ");
         this.hoTen = sc.nextLine();
-        System.out.print("\tGiới Tính: ");
+        System.out.print("\tGiới Tính (format Nam, Nữ, Khác) : ");
         this.gioiTinh = sc.nextLine();
         System.out.print("\tTuổi: ");
         this.tuoi = sc.nextInt();
@@ -47,8 +47,8 @@ public class Passenger {
         System.out.format("\t Giới tính: %s\n", this.gioiTinh);
         System.out.format("\t Tuổi: %d\n",this.tuoi);
         for (int i = 0; i < this.danhSachVe.length; i++) {
-            //danhSachVe[i].printTickInfo();
-            System.out.println(danhSachVe[i].toString());
+            danhSachVe[i].printTickInfo();
+            //System.out.println(danhSachVe[i].toString());
         }
     }
     public double tinhTongTien(){

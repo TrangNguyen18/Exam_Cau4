@@ -1,5 +1,6 @@
 package intities;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,13 +29,12 @@ public class Ticket {
         System.out.print("\tNgày Bay (format dd/MM/yyyy) : ");
         this.ngayBay = sc.nextLine();
         System.out.print("\tGiá vé: ");
-        String price = sc.nextLine();
-        this.giaVe = Double.parseDouble(price);
+        this.giaVe = sc.nextDouble();
     }
 
     //print ticket info
     public void printTickInfo() {
-        System.out.format("%s %s %,f\n",this.tenChuyen,this.ngayBay,this.giaVe);
+        System.out.format("Chuyến bay: %s, vào ngày %s, giá vé %,.2f\n",this.tenChuyen,this.ngayBay,this.giaVe);
     }
 
     @Override

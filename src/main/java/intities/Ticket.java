@@ -7,48 +7,45 @@ import java.util.Scanner;
 
 public class Ticket {
     String tenChuyen;
-    Date ngayBay;
+    String ngayBay;
     Double giaVe;
 
     //constructor
     public Ticket() {
     }
 
-    public Ticket(String tenChuyen, Date ngayBay, Double giaVe) {
+    public Ticket(String tenChuyen, String ngayBay, Double giaVe) {
         this.tenChuyen = tenChuyen;
         this.ngayBay = ngayBay;
         this.giaVe = giaVe;
     }
 
     //input ticket infor
-    public Ticket inputTicketInfor() throws ParseException {
+    public void inputTicketInfor(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap thong tin ve");
-        System.out.print("\tTen chuyen: ");
+        System.out.print("\tTên Chuyến: ");
         this.tenChuyen = sc.nextLine();
-        System.out.print("\tNgaybay (format dd/MM/yyyy) : ");
-        String date = sc.nextLine();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        this.ngayBay = format.parse(date);
-        System.out.print("\tGia ve: ");
+        System.out.print("\tNgày Bay (format dd/MM/yyyy) : ");
+        this.ngayBay = sc.nextLine();
+        System.out.print("\tGiá vé: ");
         String price = sc.nextLine();
         this.giaVe = Double.parseDouble(price);
-        return this;
     }
 
     //print ticket info
     public void printTickInfo() {
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        String date = format.format(this.ngayBay);
-        System.out.format("Thong tin chuyen bay: %s %s %,f",this.tenChuyen,this.ngayBay,this.giaVe);
+        System.out.format("%s %s %,f\n",this.tenChuyen,this.ngayBay,this.giaVe);
     }
 
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("");
-        sb.append("Chuyen bay'").append(tenChuyen).append('\'');
-        sb.append(", vao ngay ").append(ngayBay);
-        sb.append(", giaVe ").append(giaVe);
+        sb.append("Chuyến bay'").append(tenChuyen).append('\'');
+        sb.append(", vào ngày ").append(ngayBay);
+        sb.append(", Giá vé ").append(giaVe);
         return sb.toString();
+    }
+    public Double getGiaVe(){
+        return this.giaVe;
     }
 }
